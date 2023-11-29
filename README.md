@@ -32,7 +32,7 @@ Pada form untuk menambah catatan:
   
 ### Menampilkan Halaman Register
 - Mengaplikasikan React Form berisi input username dan password, kemudian data sementara disimpan menggunakan useState
-- Melakukan hit apitiap kali button diklik ke endpoint register yg telah di sediakan untuk mendapatkan token auth yg akan digunakan untuk autentikasi bearer token.
+- Melakukan hit api setiap kali button diklik ke endpoint register yg telah di sediakan untuk mendapatkan token auth yg akan digunakan untuk autentikasi bearer token.
 
 ### Menjaga state user ketika sudah login dan tidak
 - Ketika user belum login maka akan diarahkan ke halaman login/register

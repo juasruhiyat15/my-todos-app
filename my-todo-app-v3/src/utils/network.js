@@ -18,7 +18,7 @@ async function fetchWithToken(url, options = {}) {
   });
 }
 
-async function login({ username, password }) {
+async function login({ username = "diazagfa", password = "vocasia" }) {
   const response = await fetch(`${BASE_URL}/auth/login`, {
     method: "POST",
     headers: {
@@ -31,19 +31,19 @@ async function login({ username, password }) {
   console.log(responseJson);
   if (response.status >= 400) {
     alert(responseJson.msg);
-    return { error: true, code: response.status, data: null };
+    // return { error: true, code: response.status, data: null };
+  }else{
+    return { error: false, code: response.status, data: responseJson.data };
   }
-
-  return { error: false, code: response.status, data: responseJson.data };
 }
 
-async function register({ user, password }) {
+async function register({ username, password }) {
   const response = await fetch(`${BASE_URL}/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ user, password }),
+    body: JSON.stringify({ username, password }),
   });
 
   const responseJson = await response.json();
